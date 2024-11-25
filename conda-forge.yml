@@ -8,3 +8,9 @@ os_version:
   linux_64: alma8
   linux_aarch64: alma8
   linux_ppc64le: alma8
+github:
+  branch_name: main
+  tooling_branch_name: main
+conda_build:
+  error_overlinking: true
+conda_forge_output_validation: true
