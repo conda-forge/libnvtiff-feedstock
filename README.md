@@ -3,29 +3,47 @@ About libnvtiff-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libnvtiff-feedstock/blob/main/LICENSE.txt)
 
+
+About libnvtiff
+---------------
+
 Home: https://docs.nvidia.com/cuda/nvtiff/
 
 Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
 
-Summary: nvTIFF native runtime libraries
+Summary: The NVIDIA nvTIFF development package.
 
 Documentation: https://docs.nvidia.com/cuda/nvtiff/
 
-nvTIFF native runtime libraries
+nvTIFF is a GPU accelerated TIFF(Tagged Image File Format) encode/decode library built on the CUDA platform. The library is supported on Volta+ GPU architectures.
 
+About libnvtiff0
+----------------
+
+
+
+Package license: LicenseRef-NVIDIA-End-User-License-Agreement
+
+Summary: The NVIDIA nvTIFF runtime library.
+
+This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.
+
+About libnvtiff-static
+----------------------
+
+
+
+Package license: LicenseRef-NVIDIA-End-User-License-Agreement
+
+Summary: The NVIDIA nvTIFF static library.
+
+This is a developer package only. Developers should install this package to link statically to nvTIFF.
 
 Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/libnvtiff-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/libnvtiff-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
@@ -39,17 +57,17 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6</td>
+              <td>linux_64_c_compiler_version13cuda_compilercuda-nvcccuda_compiler_version12.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24102&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version13cuda_compilercuda-nvcccuda_compiler_version12.6" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6</td>
+              <td>linux_aarch64_c_compiler_version13cuda_compilercuda-nvcccuda_compiler_version12.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24102&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_c_compiler_version13cuda_compilercuda-nvcccuda_compiler_version12.6" alt="variant">
                 </a>
               </td>
             </tr><tr>

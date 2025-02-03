@@ -37,17 +37,20 @@ source:
 {% endif %}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [osx or ppc64le]
   skip: true  # [cuda_compiler_version in (None, "None", "11.8")]
+
+requirements:
+  build:
+    - cf-nvidia-tools  # [linux]
 
 outputs:
 
   - name: libnvtiff{{ version.split(".")[0] }}
     build:
-      run_exports:
-        # FIXME: Pin to patch version until 1.0
-        - {{ pin_subpackage("libnvtiff" ~ version.split(".")[0], max_pin="x.x.x") }}
+      ignore_run_exports_from:
+        - {{ compiler("cuda") }}
     files:
       - lib/libnvtiff.so.*            # [linux]
       - Library\bin\nvtiff*.dll       # [win]
@@ -59,6 +62,8 @@ outputs:
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
       host:
         - cuda-version {{ cuda_compiler_version }}
+      run:
+        - {{ pin_compatible('cuda-version', max_pin='x', min_pin='x') }}
       run_constrained:
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
     test:
@@ -66,6 +71,13 @@ outputs:
         - test -L $PREFIX/lib/libnvtiff.so.{{ version.split(".")[0] }}                            # [linux]
         - test -f $PREFIX/lib/libnvtiff.so.{{ version }}                                          # [linux]
         - if not exist %LIBRARY_BIN%\nvtiff_{{ version.split(".")[0] }}.dll exit 1              # [win]
+    about:
+      summary: The NVIDIA nvTIFF runtime library.
+      license: LicenseRef-NVIDIA-End-User-License-Agreement
+      license_file: LICENSE
+      description: >-
+        This is a runtime package only. Developers should install libnvtiff-dev to build
+        with nvTIFF.
 
   - name: libnvtiff-dev
     build:
@@ -115,15 +127,23 @@ outputs:
     test:
       commands:
         - test -f $PREFIX/lib/libnvtiff_static.a  # [linux]
+    about:
+      summary: The NVIDIA nvTIFF static library.
+      license: LicenseRef-NVIDIA-End-User-License-Agreement
+      license_file: LICENSE
+      description: >-
+        This is a developer package only. Developers should install this package to link
+        statically to nvTIFF.
 
 about:
   home: https://docs.nvidia.com/cuda/nvtiff/
   license_file: LICENSE
   license: LicenseRef-NVIDIA-End-User-License-Agreement
   license_url: https://docs.nvidia.com/cuda/eula/index.html
-  summary: nvTIFF native runtime libraries
-  description: |
-    nvTIFF native runtime libraries
+  summary: The NVIDIA nvTIFF development package.
+  description: >-
+    nvTIFF is a GPU accelerated TIFF(Tagged Image File Format) encode/decode library built
+    on the CUDA platform. The library is supported on Volta+ GPU architectures.
   doc_url: https://docs.nvidia.com/cuda/nvtiff/
 
 extra:
