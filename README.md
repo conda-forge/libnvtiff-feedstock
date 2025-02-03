@@ -3,16 +3,41 @@ About libnvtiff-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libnvtiff-feedstock/blob/main/LICENSE.txt)
 
+
+About libnvtiff
+---------------
+
 Home: https://docs.nvidia.com/cuda/nvtiff/
 
 Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
 
-Summary: nvTIFF native runtime libraries
+Summary: The NVIDIA nvTIFF development package.
 
 Documentation: https://docs.nvidia.com/cuda/nvtiff/
 
-nvTIFF native runtime libraries
+nvTIFF is a GPU accelerated TIFF(Tagged Image File Format) encode/decode library built on the CUDA platform. The library is supported on Volta+ GPU architectures.
 
+About libnvtiff0
+----------------
+
+
+
+Package license: LicenseRef-NVIDIA-End-User-License-Agreement
+
+Summary: The NVIDIA nvTIFF runtime library.
+
+This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.
+
+About libnvtiff-static
+----------------------
+
+
+
+Package license: LicenseRef-NVIDIA-End-User-License-Agreement
+
+Summary: The NVIDIA nvTIFF static library.
+
+This is a developer package only. Developers should install this package to link statically to nvTIFF.
 
 Current build status
 ====================
