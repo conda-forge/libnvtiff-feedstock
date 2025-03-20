@@ -43,7 +43,7 @@ build:
 
 requirements:
   build:
-    - cf-nvidia-tools  # [linux]
+    - cf-nvidia-tools 1.*  # [linux]
 
 outputs:
 
