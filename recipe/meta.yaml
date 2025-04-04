@@ -27,7 +27,7 @@ source:
     sha256: "2a7cc95a2a3ae56093a0becc7f87b9726253728443840fccacb35f9fd974d4cc"  # [linux and arm64 and (cuda_compiler_version or "").startswith("12") and arm_variant_type == "aarch64"]
 
 build:
-  number: 2
+  number: 3
   skip: true  # [osx or ppc64le]
   skip: true  # [cuda_compiler_version in (None, "None")]
 
