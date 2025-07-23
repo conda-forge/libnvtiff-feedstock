@@ -17,8 +17,8 @@ Documentation: https://docs.nvidia.com/cuda/nvtiff/
 
 nvTIFF is a GPU accelerated TIFF(Tagged Image File Format) encode/decode library built on the CUDA platform. The library is supported on Volta+ GPU architectures.
 
-About libnvtiff0
-----------------
+About libnvtiff
+---------------
 
 
 
@@ -39,6 +39,17 @@ Summary: The NVIDIA nvTIFF static library.
 
 This is a developer package only. Developers should install this package to link statically to nvTIFF.
 
+About libnvtiff0
+----------------
+
+
+
+Package license: LicenseRef-NVIDIA-End-User-License-Agreement
+
+Summary: The NVIDIA nvTIFF runtime library.
+
+This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.
+
 Current build status
 ====================
 
@@ -57,45 +68,24 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8</td>
+              <td>linux_64_cuda_compiler_version12.9</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24102&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cuda_compiler_version12.9" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_c_compiler_version13cuda_compilercuda-nvcccuda_compiler_version12.6</td>
+              <td>linux_aarch64_cuda_compiler_version12.9</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24102&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_c_compiler_version13cuda_compilercuda-nvcccuda_compiler_version12.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cuda_compiler_version12.9" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8</td>
+              <td>win_64_cuda_compiler_version12.9</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24102&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_c_compiler_version11cuda_compilernvcccuda_compiler_version11.8" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64_c_compiler_version13cuda_compilercuda-nvcccuda_compiler_version12.6</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24102&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_c_compiler_version13cuda_compilercuda-nvcccuda_compiler_version12.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_cuda_compilercuda-nvcccuda_compiler_version12.6</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24102&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=win&configuration=win%20win_64_cuda_compilercuda-nvcccuda_compiler_version12.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_cuda_compilernvcccuda_compiler_version11.8</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=24102&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=win&configuration=win%20win_64_cuda_compilernvcccuda_compiler_version11.8" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvtiff-feedstock?branchName=main&jobName=win&configuration=win%20win_64_cuda_compiler_version12.9" alt="variant">
                 </a>
               </td>
             </tr>
@@ -111,6 +101,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libnvtiff-green.svg)](https://anaconda.org/conda-forge/libnvtiff) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libnvtiff.svg)](https://anaconda.org/conda-forge/libnvtiff) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libnvtiff.svg)](https://anaconda.org/conda-forge/libnvtiff) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libnvtiff.svg)](https://anaconda.org/conda-forge/libnvtiff) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libnvtiff--dev-green.svg)](https://anaconda.org/conda-forge/libnvtiff-dev) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libnvtiff-dev.svg)](https://anaconda.org/conda-forge/libnvtiff-dev) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libnvtiff-dev.svg)](https://anaconda.org/conda-forge/libnvtiff-dev) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libnvtiff-dev.svg)](https://anaconda.org/conda-forge/libnvtiff-dev) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libnvtiff--static-green.svg)](https://anaconda.org/conda-forge/libnvtiff-static) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libnvtiff-static.svg)](https://anaconda.org/conda-forge/libnvtiff-static) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libnvtiff-static.svg)](https://anaconda.org/conda-forge/libnvtiff-static) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libnvtiff-static.svg)](https://anaconda.org/conda-forge/libnvtiff-static) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libnvtiff0-green.svg)](https://anaconda.org/conda-forge/libnvtiff0) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libnvtiff0.svg)](https://anaconda.org/conda-forge/libnvtiff0) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libnvtiff0.svg)](https://anaconda.org/conda-forge/libnvtiff0) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libnvtiff0.svg)](https://anaconda.org/conda-forge/libnvtiff0) |
@@ -125,41 +116,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libnvtiff-dev, libnvtiff-static, libnvtiff0` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `libnvtiff, libnvtiff-dev, libnvtiff-static, libnvtiff0` can be installed with `conda`:
 
 ```
-conda install libnvtiff-dev libnvtiff-static libnvtiff0
-```
-
-or with `mamba`:
-
-```
-mamba install libnvtiff-dev libnvtiff-static libnvtiff0
-```
-
-It is possible to list all of the versions of `libnvtiff-dev` available on your platform with `conda`:
-
-```
-conda search libnvtiff-dev --channel conda-forge
+conda install libnvtiff libnvtiff-dev libnvtiff-static libnvtiff0
 ```
 
 or with `mamba`:
 
 ```
-mamba search libnvtiff-dev --channel conda-forge
+mamba install libnvtiff libnvtiff-dev libnvtiff-static libnvtiff0
+```
+
+It is possible to list all of the versions of `libnvtiff` available on your platform with `conda`:
+
+```
+conda search libnvtiff --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search libnvtiff --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search libnvtiff-dev --channel conda-forge
+mamba repoquery search libnvtiff --channel conda-forge
 
-# List packages depending on `libnvtiff-dev`:
-mamba repoquery whoneeds libnvtiff-dev --channel conda-forge
+# List packages depending on `libnvtiff`:
+mamba repoquery whoneeds libnvtiff --channel conda-forge
 
-# List dependencies of `libnvtiff-dev`:
-mamba repoquery depends libnvtiff-dev --channel conda-forge
+# List dependencies of `libnvtiff`:
+mamba repoquery depends libnvtiff --channel conda-forge
 ```
 
 
