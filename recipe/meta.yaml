@@ -38,8 +38,8 @@ outputs:
 
   - name: libnvtiff{{ version.split(".")[0] }}
     build:
-      ignore_run_exports_from:
-        - {{ compiler("cuda") }}
+      ignore_run_exports:
+        - cuda-version
     files:
       - lib/libnvtiff.so.*            # [linux]
       - Library\bin\nvtiff*.dll       # [win]
@@ -50,11 +50,10 @@ outputs:
         - {{ stdlib("c") }}
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
       host:
+        - arm-variant * {{ arm_variant_type }}  # [aarch64]
         - cuda-version {{ cuda_compiler_version }}
       run:
         - {{ pin_compatible('cuda-version', max_pin='x', min_pin='x') }}
-      run_constrained:
-        - arm-variant * {{ arm_variant_type }}  # [aarch64]
     test:
       commands:
         - test -L $PREFIX/lib/libnvtiff.so.{{ version.split(".")[0] }}                            # [linux]
@@ -68,11 +67,25 @@ outputs:
         This is a runtime package only. Developers should install libnvtiff-dev to build
         with nvTIFF.
 
+  - name: libnvtiff
+    requirements:
+      run:
+        # FIXME: Pin to patch version until 1.0
+        - {{ pin_subpackage("libnvtiff" ~ version.split(".")[0], max_pin="x.x.x") }}
+    about:
+      summary: The NVIDIA nvTIFF runtime library.
+      license: LicenseRef-NVIDIA-End-User-License-Agreement
+      license_file: LICENSE
+      description: >-
+        This is a runtime package only. Developers should install libnvtiff-dev to build
+        with nvTIFF.
+
   - name: libnvtiff-dev
     build:
       run_exports:
         # FIXME: Pin to patch version until 1.0
         - {{ pin_subpackage("libnvtiff" ~ version.split(".")[0], max_pin="x.x.x") }}
+        - {{ pin_subpackage("libnvtiff", max_pin="x.x.x") }}
     files:
       - lib/libnvtiff.so                                  # [linux]
       # - lib/pkgconfig/nvtiff*.pc                          # [linux]
@@ -83,12 +96,13 @@ outputs:
       build:
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
       host:
+        - arm-variant * {{ arm_variant_type }}  # [aarch64]
         - cuda-version {{ cuda_compiler_version }}
         - {{ pin_subpackage("libnvtiff" ~ version.split(".")[0], exact=True) }}
+        - {{ pin_subpackage("libnvtiff", max_pin="x.x.x") }}
       run:
         - {{ pin_subpackage("libnvtiff" ~ version.split(".")[0], exact=True) }}
-      run_constrained:
-        - arm-variant * {{ arm_variant_type }}  # [aarch64]
+        - {{ pin_subpackage("libnvtiff", max_pin="x.x.x") }}
     test:
       commands:
         - test -L $PREFIX/lib/libnvtiff.so                                    # [linux]
@@ -108,11 +122,10 @@ outputs:
       build:
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
       host:
+        - arm-variant * {{ arm_variant_type }}  # [aarch64]
         - cuda-version {{ cuda_compiler_version }}
       run:
         - {{ pin_subpackage("libnvtiff-dev", exact=True) }}
-      run_constrained:
-        - arm-variant * {{ arm_variant_type }}  # [aarch64]
     test:
       commands:
         - test -f $PREFIX/lib/libnvtiff_static.a  # [linux]
