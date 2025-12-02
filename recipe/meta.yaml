@@ -1,4 +1,4 @@
-{% set version = "0.5.1.75" %}
+{% set version = "0.6.0.78" %}
 {% set arm_variant_type = arm_variant_type | default("sbsa") %}
 {% set cuda_compiler_version = cuda_compiler_version | default("None") %}
 
@@ -7,30 +7,20 @@ package:
   version: {{ version }}
 
 source:
-  - url: "https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/linux-x86_64/libnvtiff-linux-x86_64-{{ version }}_cuda11-archive.tar.xz"  # [linux and x86_64 and (cuda_compiler_version or "").startswith("11")]
-    sha256: "5adabfe9c4eac59916bfc464b7325866da99752ade30bbc3ddd3cd9c852f69e7"  # [linux and x86_64 and (cuda_compiler_version or "").startswith("11")]
   - url: "https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/linux-x86_64/libnvtiff-linux-x86_64-{{ version }}_cuda12-archive.tar.xz"  # [linux and x86_64 and (cuda_compiler_version or "").startswith("12")]
-    sha256: "1f97778f92c938f5174fda74a913370d4ff200d77809570cecdafcd8aaff84b6"  # [linux and x86_64 and (cuda_compiler_version or "").startswith("12")]
+    sha256: "2c889bf4767e4ab8e81f46e9f2b675e1d424c46e4a54bb97049bbb3b87ff4aed"  # [linux and x86_64 and (cuda_compiler_version or "").startswith("12")]
   - url: "https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/linux-x86_64/libnvtiff-linux-x86_64-{{ version }}_cuda13-archive.tar.xz"  # [linux and x86_64 and (cuda_compiler_version or "").startswith("13")]
-    sha256: "5d63be4128daf28676ae01a81d2e69f828d2e7eda332c039079ff57b42915d20"  # [linux and x86_64 and (cuda_compiler_version or "").startswith("13")]
-  - url: "https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/linux-sbsa/libnvtiff-linux-sbsa-{{ version }}_cuda11-archive.tar.xz"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("11") and arm_variant_type == "sbsa"]
-    sha256: "9274e74f58c2d85d13089ba3be3e3464c2cb34d2332c9f7a96ec42765bf2b034"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("11") and arm_variant_type == "sbsa"]
+    sha256: "8018c8dcff3bcac9f0e74827d312f67169b9fd01b40b2bbb431dd9bf8a5c38aa"  # [linux and x86_64 and (cuda_compiler_version or "").startswith("13")]
   - url: "https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/linux-sbsa/libnvtiff-linux-sbsa-{{ version }}_cuda12-archive.tar.xz"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("12") and arm_variant_type == "sbsa"]
-    sha256: "d20309617df0bca6b373dfa33bac99703993a0e3759af70d2691d3b829df4d33"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("12") and arm_variant_type == "sbsa"]
+    sha256: "3694b154003a3741b68fc9ff70ad9195a756be1feb2404be6f2482bb97574c00"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("12") and arm_variant_type == "sbsa"]
   - url: "https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/linux-sbsa/libnvtiff-linux-sbsa-{{ version }}_cuda13-archive.tar.xz"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("13") and arm_variant_type == "sbsa"]
-    sha256: "415c507443c026db501bd58d49428d6378f7d5e02e371f8f05d9cbe421565a90"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("13") and arm_variant_type == "sbsa"]
-  - url: "https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/windows-x86_64/libnvtiff-windows-x86_64-{{ version }}_cuda11-archive.zip"  # [win and x86_64 and (cuda_compiler_version or "").startswith("11")]
-    sha256: "c140fb7c0cb40c8796cdc7f3cf604a7fbb85e5b6e0e3315d9c269cfa19caa46a"  # [win and x86_64 and (cuda_compiler_version or "").startswith("11")]
+    sha256: "a0667c222c41186b9bf4fbc447281375bd83ec4b4c6658c37440149b78df4f41"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("13") and arm_variant_type == "sbsa"]
   - url: "https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/windows-x86_64/libnvtiff-windows-x86_64-{{ version }}_cuda12-archive.zip"  # [win and x86_64 and (cuda_compiler_version or "").startswith("12")]
-    sha256: "a3db5d37c61845d97aa5f1c1a93f9885239741c169a4c577f1f93293dd139a0d"  # [win and x86_64 and (cuda_compiler_version or "").startswith("12")]
+    sha256: "1eb6848921808f28d703320f52ac584743a365d9bef4b105482db2d63e01f039"  # [win and x86_64 and (cuda_compiler_version or "").startswith("12")]
   - url: "https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/windows-x86_64/libnvtiff-windows-x86_64-{{ version }}_cuda13-archive.zip"  # [win and x86_64 and (cuda_compiler_version or "").startswith("13")]
-    sha256: "0e75603c23eed4df4d04d8ddd08bc106df9a4423596f32d238fbf7bb623280b1"  # [win and x86_64 and (cuda_compiler_version or "").startswith("13")]
-  - url: "https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/linux-aarch64/libnvtiff-linux-aarch64-{{ version }}_cuda11-archive.tar.xz"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("11") and arm_variant_type == "tegra"]
-    sha256: "ef8f2f8472959be63e895997c0b13892db4e3c6bf3d06a4752c8e9292531c55a"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("11") and arm_variant_type == "tegra"]
+    sha256: "8a99af1fd4919fe21829bf05e3e4b87aa2adb563e409a86ee54d2746f01f0045"  # [win and x86_64 and (cuda_compiler_version or "").startswith("13")]
   - url: "https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/linux-aarch64/libnvtiff-linux-aarch64-{{ version }}_cuda12-archive.tar.xz"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("12") and arm_variant_type == "tegra"]
-    sha256: "7d37821154aca7846695ccf12369eeb8c0f263d58b6dfb43e23bd12f4c114ef0"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("12") and arm_variant_type == "tegra"]
-  - url: "https://developer.download.nvidia.com/compute/nvtiff/redist/libnvtiff/linux-aarch64/libnvtiff-linux-aarch64-{{ version }}_cuda13-archive.tar.xz"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("13") and arm_variant_type == "tegra"]
-    sha256: "8d1b07af6d8b68776d6a6533b4c33134af01d5cb6a0d9c5bcc7a866559de600a"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("13") and arm_variant_type == "tegra"]
+    sha256: "1c1707880f6438dee0fcf58ab2cc62125e8140c90a983029ef6186aa7a8dc798"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("12") and arm_variant_type == "tegra"]
 
 build:
   number: 0
