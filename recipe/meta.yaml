@@ -23,7 +23,7 @@ source:
     sha256: "1c1707880f6438dee0fcf58ab2cc62125e8140c90a983029ef6186aa7a8dc798"  # [linux and aarch64 and (cuda_compiler_version or "").startswith("12") and arm_variant_type == "tegra"]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [osx or ppc64le or cuda_compiler_version in (None, "None")]
   # skip: true  # [arm_variant_type == "tegra" and cuda_compiler_version != "12.9"]
 
@@ -115,6 +115,7 @@ outputs:
     requirements:
       host:
         - cuda-version {{ cuda_compiler_version }}
+        - arm-variant * {{ arm_variant_type }}  # [linux and aarch64]
       run:
         - {{ pin_subpackage("libnvtiff-dev", exact=True) }}
     test:
