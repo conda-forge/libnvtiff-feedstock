@@ -28,17 +28,6 @@ Summary: The NVIDIA nvTIFF runtime library.
 
 This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.
 
-About libnvtiff-static
-----------------------
-
-
-
-Package license: LicenseRef-NVIDIA-End-User-License-Agreement
-
-Summary: The NVIDIA nvTIFF static library.
-
-This is a developer package only. Developers should install this package to link statically to nvTIFF.
-
 About libnvtiff0
 ----------------
 
@@ -49,6 +38,17 @@ Package license: LicenseRef-NVIDIA-End-User-License-Agreement
 Summary: The NVIDIA nvTIFF runtime library.
 
 This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.
+
+About libnvtiff-static
+----------------------
+
+
+
+Package license: LicenseRef-NVIDIA-End-User-License-Agreement
+
+Summary: The NVIDIA nvTIFF static library.
+
+This is a developer package only. Developers should install this package to link statically to nvTIFF.
 
 Current build status
 ====================
