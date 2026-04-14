@@ -60,8 +60,7 @@ outputs:
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_file: LICENSE
       description: >-
-        This is a runtime package only. Developers should install libnvtiff-dev to build
-        with nvTIFF.
+        This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.
 
   - name: libnvtiff
     requirements:
@@ -73,8 +72,7 @@ outputs:
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_file: LICENSE
       description: >-
-        This is a runtime package only. Developers should install libnvtiff-dev to build
-        with nvTIFF.
+        This is a runtime package only. Developers should install libnvtiff-dev to build with nvTIFF.
 
   - name: libnvtiff-dev
     build:
@@ -109,7 +107,7 @@ outputs:
 
   - name: libnvtiff-static
     build:
-      skip: True  # [not linux]
+      skip: true  # [not linux]
     files:
       - lib/libnvtiff_static.a  # [linux]
     requirements:
@@ -126,8 +124,7 @@ outputs:
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_file: LICENSE
       description: >-
-        This is a developer package only. Developers should install this package to link
-        statically to nvTIFF.
+        This is a developer package only. Developers should install this package to link statically to nvTIFF.
 
 about:
   home: https://docs.nvidia.com/cuda/nvtiff/
@@ -136,8 +133,7 @@ about:
   license_url: https://docs.nvidia.com/cuda/eula/index.html
   summary: The NVIDIA nvTIFF development package.
   description: >-
-    nvTIFF is a GPU accelerated TIFF(Tagged Image File Format) encode/decode library built
-    on the CUDA platform. The library is supported on Volta+ GPU architectures.
+    nvTIFF is a GPU accelerated TIFF(Tagged Image File Format) encode/decode library built on the CUDA platform. The library is supported on Volta+ GPU architectures.
   doc_url: https://docs.nvidia.com/cuda/nvtiff/
 
 extra:
