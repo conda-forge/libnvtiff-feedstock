@@ -45,12 +45,12 @@ outputs:
         - {{ compiler("c") }}
         - {{ compiler("cuda") }}
         - {{ stdlib("c") }}
+        - arm-variant * {{ arm_variant_type }}  # [linux and aarch64]
       host:
         - cuda-version {{ cuda_compiler_version }}
-        - arm-variant * {{ arm_variant_type }}  # [linux and aarch64]
       run:
         - {{ pin_compatible('cuda-version', max_pin='x', min_pin='x') }}
-        - libnvcomp >=5
+        - libnvcomp >=5,<6
         - libnvjpeg2k0 >=0.8.1
     test:
       commands:
