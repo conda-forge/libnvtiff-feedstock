@@ -50,7 +50,8 @@ outputs:
         - cuda-version {{ cuda_compiler_version }}
       run:
         - {{ pin_compatible('cuda-version', max_pin='x', min_pin='x') }}
-        - libnvcomp >=5,<6
+        # libnvcomp has no tegra build on conda-forge; DEFLATE codec won't be available on tegra
+        - libnvcomp >=5,<6  # [not (linux and aarch64 and arm_variant_type == "tegra")]
         # FIXME: nvjpeg2k is pre-1.0 and may break ABI across minors; revisit upper pin on each nvtiff update until nvjpeg2k >= 1.0
         - libnvjpeg2k0 >=0.8.1,<0.11
     test:
