@@ -6,7 +6,12 @@
 
 mkdir -p ${PREFIX}/lib
 [[ -d pkg-config ]] && mv pkg-config ${PREFIX}/lib/pkgconfig
-[[ -d "$PREFIX/lib/pkgconfig" ]] && sed -E -i "s|cudaroot=.+|cudaroot=$PREFIX|g" $PREFIX/lib/pkgconfig/nvtiff*.pc
+# Guard on the files, not the directory: the host env can provide lib/pkgconfig
+# without any nvtiff*.pc (the archive ships none), and sed would fail on the bare glob.
+for pc in "$PREFIX"/lib/pkgconfig/nvtiff*.pc; do
+    [[ -f $pc ]] || continue
+    sed -E -i "s|cudaroot=.+|cudaroot=$PREFIX|g" "$pc"
+done
 
 for i in `ls`; do
     [[ $i == "build_env_setup.sh" ]] && continue
