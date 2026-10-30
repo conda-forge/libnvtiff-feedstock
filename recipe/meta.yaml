@@ -59,6 +59,10 @@ outputs:
         - test -L $PREFIX/lib/libnvtiff.so.{{ version.split(".")[0] }}                            # [linux]
         - test -f $PREFIX/lib/libnvtiff.so.{{ version }}                                          # [linux]
         - if not exist %LIBRARY_BIN%\nvtiff_{{ version.split(".")[0] }}.dll exit 1              # [win]
+        # nvtiff dlopens nvcomp by versioned name; ensure the libnvcomp run dependency provides that exact library
+        - nvcomp_soname=$(grep -ao 'libnvcomp\.so\.[0-9]\+' $PREFIX/lib/libnvtiff.so.{{ version }} | sort -u) && test -n "$nvcomp_soname" && test -e "$PREFIX/lib/$nvcomp_soname"  # [linux and not (aarch64 and arm_variant_type == "tegra")]
+        - if not exist %LIBRARY_BIN%\nvcomp64_*.dll exit 1                                      # [win]
+        - for %%f in ("%LIBRARY_BIN%\nvcomp64_*.dll") do findstr /m /c:"%%~nxf" %LIBRARY_BIN%\nvtiff_{{ version.split(".")[0] }}.dll || exit 1  # [win]
     about:
       summary: The NVIDIA nvTIFF runtime library.
       license: LicenseRef-NVIDIA-End-User-License-Agreement
