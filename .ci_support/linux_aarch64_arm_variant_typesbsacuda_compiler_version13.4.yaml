@@ -1,3 +1,5 @@
+DOCKER_PLATFORM:
+- linux/amd64
 arm_variant_type:
 - sbsa
 c_compiler:
